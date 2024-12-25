@@ -927,6 +927,15 @@
     curryUnaryFunction(1); // returns a function: b => c =>  1 + b + c
     curryUnaryFunction(1)(2); // returns a function: c => 3 + c
     curryUnaryFunction(1)(2)(3); // returns the number 6
+
+    other way to create same function
+    function curryUnaryFunction(a){
+      return function funcTwo(b){
+          return function funcThree(c){
+              return a + b + c;
+          }
+        }
+    } 
     ```
 
     Curried functions are great to improve **code reusability** and **functional composition**.
